@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "789021771694",
+    "project_id": "myvet-dam",
+    "storage_bucket": "myvet-dam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789021771694:android:8c5888f919fa757d36ea3f",
+        "android_client_info": {
+          "package_name": "com.dam.myvet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789021771694-hksj8hc03dged7e9lbic84mrv98a7hbh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUMF2xfLuX3kCAJR0tgji_ySI9-hvSTw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789021771694-hksj8hc03dged7e9lbic84mrv98a7hbh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
