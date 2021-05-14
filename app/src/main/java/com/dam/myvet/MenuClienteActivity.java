@@ -1,5 +1,7 @@
 package com.dam.myvet;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -30,17 +32,28 @@ public class MenuClienteActivity extends AppCompatActivity {
         /*binding = ActivityMenuClienteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());*/
 
+        Bundle bundle = getIntent().getExtras();
+        String email = bundle.getString("email");
+
+        // Guardado de datos
+        SharedPreferences.Editor prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit();
+        prefs.putString("email",email);
+        prefs.apply();
+
+        //Cierre de cesión
+        prefs.clear();
+        prefs.apply();
         FirebaseAuth.getInstance().signOut();
         onBackPressed();
 
         setSupportActionBar(binding.appBarMenuCliente.toolbar);
-        binding.appBarMenuCliente.fab.setOnClickListener(new View.OnClickListener() {
+        /*binding.appBarMenuCliente.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
