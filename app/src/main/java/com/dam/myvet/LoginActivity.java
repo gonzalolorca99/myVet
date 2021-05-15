@@ -64,7 +64,10 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        showMenu(usernameEditText.getText().toString());
+                                        //showMenu(usernameEditText.getText().toString());
+                                        Intent registro = new Intent(LoginActivity.this, RegistroActivity.class);
+                                        registro.putExtra("correo", usernameEditText.toString());
+                                        startActivity(registro);
                                     } else {
                                         alertaLogin();
                                     }

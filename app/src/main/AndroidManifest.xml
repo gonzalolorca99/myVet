@@ -8,10 +8,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyVet">
+        <activity android:name=".RegistroActivity"></activity>
         <activity
             android:name=".MenuClienteActivity"
             android:label="@string/title_activity_menu_cliente"
-            android:theme="@style/Theme.MyVet.NoActionBar"></activity>
+            android:theme="@style/Theme.MyVet.NoActionBar" />
         <activity
             android:name=".Splash"
             android:theme="@style/SplashTheme">
@@ -21,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
