@@ -1,16 +1,16 @@
-package com.dam.myvet.ui.slideshow;
+package com.dam.myvet.ui.Inicio;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class InicioViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public InicioViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is home fragment");
     }
 
     public LiveData<String> getText() {

@@ -1,4 +1,4 @@
-package com.dam.myvet.ui.home;
+package com.dam.myvet.ui.Clientes;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,23 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.dam.myvet.R;
-import com.dam.myvet.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+public class ClientesFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+    private ClientesViewModel ClientesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        ClientesViewModel =
+                new ViewModelProvider(this).get(ClientesViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        View root = inflater.inflate(R.layout.fragment_clientes, container, false);
+        final TextView textView = root.findViewById(R.id.text_clientes);
+        ClientesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
@@ -41,6 +37,5 @@ public class HomeFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
     }
 }

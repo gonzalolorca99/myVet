@@ -1,4 +1,4 @@
-package com.dam.myvet.ui.gallery;
+package com.dam.myvet.ui.Perfil;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,23 +13,19 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.dam.myvet.R;
-import com.dam.myvet.databinding.FragmentGalleryBinding;
 
-public class GalleryFragment extends Fragment {
+public class PerfilFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
-    private FragmentGalleryBinding binding;
+    private PerfilViewModel PerfilViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        PerfilViewModel =
+                new ViewModelProvider(this).get(PerfilViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        View root = inflater.inflate(R.layout.fragment_perfil, container, false);
+        final TextView textView = root.findViewById(R.id.text_perfil);
+        PerfilViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
@@ -41,6 +37,5 @@ public class GalleryFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
     }
 }

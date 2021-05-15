@@ -1,16 +1,16 @@
-package com.dam.myvet.ui.home;
+package com.dam.myvet.ui.Turnos;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class TurnosViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public TurnosViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Aquí no le ofrecemos servicio a los tiesos, váyase señor Cuesta.");
     }
 
     public LiveData<String> getText() {

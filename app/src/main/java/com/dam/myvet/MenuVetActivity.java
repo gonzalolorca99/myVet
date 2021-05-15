@@ -3,25 +3,19 @@ package com.dam.myvet;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Menu;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.navigation.NavigationView;
-
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.dam.myvet.databinding.ActivityMenuClienteBinding;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MenuClienteActivity extends AppCompatActivity {
+public class MenuVetActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -46,8 +40,8 @@ public class MenuClienteActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicioC, R.id.nav_perfil, R.id.nav_citas,
-                R.id.nav_mascotasC, R.id.nav_aboutas, R.id.nav_cerrarsesionC)
+                R.id.nav_inicio, R.id.nav_alertas, R.id.nav_turnos,
+                R.id.nav_mascotas, R.id.nav_clientes, R.id.nav_cerrarsesion)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_cliente);

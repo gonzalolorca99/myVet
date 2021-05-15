@@ -1,4 +1,4 @@
-package com.dam.myvet.ui.slideshow;
+package com.dam.myvet.ui.Inicio;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,23 +13,21 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.dam.myvet.R;
-import com.dam.myvet.databinding.FragmentSlideshowBinding;
 
-public class SlideshowFragment extends Fragment {
+public class InicioFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
-    private FragmentSlideshowBinding binding;
+    private InicioViewModel inicioViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        inicioViewModel =
+                new ViewModelProvider(this).get(InicioViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        View root = inflater.inflate(R.layout.fragment_inicioc, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+
+        inicioViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
@@ -41,6 +39,5 @@ public class SlideshowFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
     }
 }

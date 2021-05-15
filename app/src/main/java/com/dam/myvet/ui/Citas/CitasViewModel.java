@@ -1,16 +1,16 @@
-package com.dam.myvet.ui.gallery;
+package com.dam.myvet.ui.Citas;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class CitasViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public CitasViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("Aquí no le ofrecemos servicio a los tiesos, váyase señor Cuesta.");
     }
 
     public LiveData<String> getText() {

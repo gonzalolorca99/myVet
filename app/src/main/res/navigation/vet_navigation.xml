@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vet_navigation"
+    app:startDestination="@+id/nav_host_fragment_content_menu_vet">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="com.dam.myvet.ui.Inicio.InicioFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_inicio" />
+    <fragment
+        android:id="@+id/nav_alertas"
+        android:name="com.dam.myvet.ui.Alertas.AlertasFragment"
+        android:label="fragment_alertas"
+        tools:layout="@layout/fragment_alertas" />
+    <fragment
+        android:id="@+id/nav_turnos"
+        android:name="com.dam.myvet.ui.Turnos.TurnosFragment"
+        android:label="fragment_turnos"
+        tools:layout="@layout/fragment_turnos" />
+    <fragment
+        android:id="@+id/nav_mascotas"
+        android:name="com.dam.myvet.ui.Mascotas.MascotasFragment"
+        android:label="fragment_mascotas"
+        tools:layout="@layout/fragment_mascotas" />
+    <fragment
+        android:id="@+id/nav_clientes"
+        android:name="com.dam.myvet.ui.Clientes.ClientesFragment"
+        android:label="fragment_clientes"
+        tools:layout="@layout/fragment_clientes" />
+    <fragment
+        android:id="@+id/nav_cerrarsesion"
+        android:name="com.dam.myvet.ui.CerrarSesion.CerrarSesionFragment"
+        tools:layout="@layout/fragment_aboutas" />
+</navigation>

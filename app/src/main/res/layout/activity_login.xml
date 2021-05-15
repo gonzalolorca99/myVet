@@ -32,9 +32,10 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="140dp"
+            android:layout_marginTop="10dp"
             android:text="MyVET"
+            android:textColor="@color/teal_700"
             android:textAppearance="@style/CardView.Dark"
             android:textSize="30dp" />
 
