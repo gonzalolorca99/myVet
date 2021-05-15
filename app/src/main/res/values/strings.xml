@@ -21,6 +21,10 @@
     <string name="menu_home">Inicio</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="nomvacio">Nombre</string>
+    <string name="apevacio">Apellidos</string>
+    <string name="numvacio">Nºde teléfono</string>
+    <string name="domvacio">Domicilio</string>
 
     <string name="prefs_file">com.dam.myVet.PREFERENCE_FILE_KAY</string>
 
