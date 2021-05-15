@@ -13,25 +13,24 @@
     <fragment
         android:id="@+id/nav_alertas"
         android:name="com.dam.myvet.ui.Alertas.AlertasFragment"
-        android:label="fragment_alertas"
+        android:label="Alertas"
         tools:layout="@layout/fragment_alertas" />
     <fragment
         android:id="@+id/nav_turnos"
         android:name="com.dam.myvet.ui.Turnos.TurnosFragment"
-        android:label="fragment_turnos"
+        android:label="Turnos"
         tools:layout="@layout/fragment_turnos" />
     <fragment
         android:id="@+id/nav_mascotas"
         android:name="com.dam.myvet.ui.Mascotas.MascotasFragment"
-        android:label="fragment_mascotas"
+        android:label="Mascotas"
         tools:layout="@layout/fragment_mascotas" />
     <fragment
         android:id="@+id/nav_clientes"
         android:name="com.dam.myvet.ui.Clientes.ClientesFragment"
-        android:label="fragment_clientes"
+        android:label="Clientes"
         tools:layout="@layout/fragment_clientes" />
     <fragment
         android:id="@+id/nav_cerrarsesion"
-        android:name="com.dam.myvet.ui.CerrarSesion.CerrarSesionFragment"
-        tools:layout="@layout/fragment_aboutas" />
+        android:name="com.dam.myvet.ui.CerrarSesion.CerrarSesionFragment" />
 </navigation>
