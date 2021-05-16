@@ -45,6 +45,16 @@
             android:imeOptions="actionDone"
             android:selectAllOnFocus="true" />
         <EditText
+            android:id="@+id/dni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="40dp"
+            android:hint="@string/dnivacio"
+            android:imeOptions="actionDone"
+            android:selectAllOnFocus="true" />
+        <EditText
             android:id="@+id/telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

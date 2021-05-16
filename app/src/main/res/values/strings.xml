@@ -27,5 +27,6 @@
     <string name="domvacio">Domicilio</string>
 
     <string name="prefs_file">com.dam.myVet.PREFERENCE_FILE_KAY</string>
+    <string name="dnivacio">DNI</string>
 
 </resources>

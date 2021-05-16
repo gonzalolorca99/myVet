@@ -64,9 +64,8 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        //showMenu(usernameEditText.getText().toString());
                                         Intent registro = new Intent(LoginActivity.this, RegistroActivity.class);
-                                        registro.putExtra("correo", usernameEditText.toString());
+                                        registro.putExtra("correo", usernameEditText.getText().toString());
                                         startActivity(registro);
                                     } else {
                                         alertaLogin();
@@ -87,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        showMenu(usernameEditText.getText().toString());
+                                        showMenu();
                                     } else {
                                         alertaLogin();
                                     }
@@ -110,25 +109,12 @@ public class LoginActivity extends AppCompatActivity {
                 startActivityForResult(googleClient.getSignInIntent(), RC_SIGN_IN);
             }
         });
-
-        session();
     }
 
 
     public void onStart() {
         super.onStart();
         loginLayout.setVisibility(View.VISIBLE);
-    }
-
-    public void session(){
-        SharedPreferences prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE);
-        String email = prefs.getString("email", null);
-
-        if (email != null){
-            loginLayout.setVisibility(View.INVISIBLE);
-            showMenu(email);
-        }
-
     }
 
     public void alertaLogin(){
@@ -140,7 +126,7 @@ public class LoginActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void showMenu(String email){
+    public void showMenu(){
         Intent intent = new Intent(this, MenuClienteActivity.class);
         intent.putExtra("email", usernameEditText.getText().toString());
         startActivity(intent);
@@ -163,7 +149,14 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        showMenu(usernameEditText.getText().toString());
+                                        SharedPreferences prefs = getSharedPreferences(
+                                                getString(R.string.prefs_file), Context.MODE_PRIVATE);
+                                        String email = prefs.getString("email", null);
+
+                                        if (email != null){
+                                            loginLayout.setVisibility(View.INVISIBLE);
+                                            showMenu();
+                                        }
                                     } else {
                                         alertaLogin();
                                     }
