@@ -45,7 +45,6 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private LinearLayout loginLayout;
     private FirebaseFirestore db;
-    private int i;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -146,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void showMenu(String email){
-        i = 0;
+        Log.d("EMAILSESSION", email);
         db = FirebaseFirestore.getInstance();
 
         db.collection("clientes")
@@ -155,16 +154,16 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful() && task.getResult() != null) {
+                        if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("CompruebaLogin", document.getId() + " => " + document.getData());
-                                i++;
-                            }
-                            if (i>0){
-                                Log.d("Mensaje login","Veterinario se mete en cliente");
-                                Intent intent = new Intent(LoginActivity.this, MenuClienteActivity.class);
-                                intent.putExtra("email", email);
-                                startActivity(intent);
+                                if (document.getId().equals(email)){
+                                    Log.d("Mensaje login","Veterinario se mete en cliente");
+                                    Intent intent = new Intent(LoginActivity.this, MenuClienteActivity.class);
+                                    intent.putExtra("email", email);
+                                    startActivity(intent);
+                                }
+
                             }
                         }
                     }
@@ -176,16 +175,15 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()  && task.getResult() != null) {
+                        if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("CompruebaLogin", document.getId() + " => " + document.getData());
-                                i++;
-                            }
-                            if (i > 0){
-                                Log.d("Mensaje login","Veterinario se mete en veterinario");
-                                Intent intent = new Intent(LoginActivity.this, MenuVetActivity.class);
-                                intent.putExtra("email", email);
-                                startActivity(intent);
+                                if (document.getData().get("email").toString().equals(email)){
+                                    Log.d("Mensaje login","Veterinario se mete en veterinarios");
+                                    Intent intent = new Intent(LoginActivity.this, MenuVetActivity.class);
+                                    intent.putExtra("email", email);
+                                    startActivity(intent);
+                                }
                             }
                         }
                     }
