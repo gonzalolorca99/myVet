@@ -176,7 +176,7 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
+                        if (task.isSuccessful()  && task.getResult() != null) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("CompruebaLogin", document.getId() + " => " + document.getData());
                                 i++;
