@@ -27,7 +27,7 @@ public class MenuVetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_cliente);
+        setContentView(R.layout.activity_menu_vet);
 
         bundle = getIntent().getExtras();
         email = bundle.getString("email");
@@ -37,11 +37,11 @@ public class MenuVetActivity extends AppCompatActivity {
         prefs.putString("email",email);
         prefs.apply();
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_vet);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        DrawerLayout drawer = findViewById(R.id.menu_vet_layout);
+        NavigationView navigationView = findViewById(R.id.nav_vet_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -49,7 +49,7 @@ public class MenuVetActivity extends AppCompatActivity {
                 R.id.nav_mascotas, R.id.nav_clientes, R.id.nav_cerrarsesion)
                 .setDrawerLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_cliente);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_vet);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -58,7 +58,7 @@ public class MenuVetActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_cliente);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu_vet);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }

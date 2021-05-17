@@ -29,6 +29,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button googleButton;
     private FirebaseAuth mAuth;
     private LinearLayout loginLayout;
+    private FirebaseFirestore db;
+    private int i;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        showMenu();
+                                        showMenu(usernameEditText.getText().toString());
                                     } else {
                                         alertaLogin();
                                     }
@@ -109,12 +115,25 @@ public class LoginActivity extends AppCompatActivity {
                 startActivityForResult(googleClient.getSignInIntent(), RC_SIGN_IN);
             }
         });
+
+        session();
     }
 
 
     public void onStart() {
         super.onStart();
         loginLayout.setVisibility(View.VISIBLE);
+    }
+
+    public void session(){
+        SharedPreferences prefs = getSharedPreferences(
+                getString(R.string.prefs_file), Context.MODE_PRIVATE);
+        String email = prefs.getString("email", null);
+
+        if (email != null){
+            loginLayout.setVisibility(View.INVISIBLE);
+            showMenu(email);
+        }
     }
 
     public void alertaLogin(){
@@ -126,10 +145,51 @@ public class LoginActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void showMenu(){
-        Intent intent = new Intent(this, MenuClienteActivity.class);
-        intent.putExtra("email", usernameEditText.getText().toString());
-        startActivity(intent);
+    public void showMenu(String email){
+        i = 0;
+        db = FirebaseFirestore.getInstance();
+
+        db.collection("clientes")
+                .whereEqualTo("email", email)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful() && task.getResult() != null) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("CompruebaLogin", document.getId() + " => " + document.getData());
+                                i++;
+                            }
+                            if (i>0){
+                                Log.d("Mensaje login","Veterinario se mete en cliente");
+                                Intent intent = new Intent(LoginActivity.this, MenuClienteActivity.class);
+                                intent.putExtra("email", email);
+                                startActivity(intent);
+                            }
+                        }
+                    }
+                });
+
+        db.collection("veterinarios")
+                .whereEqualTo("email", email)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("CompruebaLogin", document.getId() + " => " + document.getData());
+                                i++;
+                            }
+                            if (i > 0){
+                                Log.d("Mensaje login","Veterinario se mete en veterinario");
+                                Intent intent = new Intent(LoginActivity.this, MenuVetActivity.class);
+                                intent.putExtra("email", email);
+                                startActivity(intent);
+                            }
+                        }
+                    }
+                });
     }
 
     @Override
@@ -149,14 +209,7 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        SharedPreferences prefs = getSharedPreferences(
-                                                getString(R.string.prefs_file), Context.MODE_PRIVATE);
-                                        String email = prefs.getString("email", null);
-
-                                        if (email != null){
-                                            loginLayout.setVisibility(View.INVISIBLE);
-                                            showMenu();
-                                        }
+                                        showMenu(account.getEmail());
                                     } else {
                                         alertaLogin();
                                     }
