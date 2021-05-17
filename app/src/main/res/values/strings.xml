@@ -29,4 +29,9 @@
     <string name="prefs_file">com.dam.myVet.PREFERENCE_FILE_KAY</string>
     <string name="dnivacio">DNI</string>
 
+    <string name="parrafo1">Esta aplicación nace en 2021 como proyecto final de la asignatura Diseño de Aplicaciones Móviles de 4ºCurso del Grado en Ingeniería de Tecnologías de Telecomunicación en la Universidad de Sevilla. Desarrollada por los alumnos Pablo López Vílchez y Gonzalo Jesús Lorca Hinojosa.</string>
+    <string name="parrafo2">Se trata de una aplicación sin ánimo de lucro creada por estudiantes para poner en práctica todos los conocimientos adquiridos en esta asignatura. </string>
+    <string name="parrafo3">Esta aplicación es totalmente escalable y adaptable para cualquier clínica veterinaria que en un futuro requiriese de ella.</string>
+    <string name="aceptar">Ok</string>
+
 </resources>
