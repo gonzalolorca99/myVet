@@ -7,7 +7,7 @@ public class Cliente {
     private String telefono;
     private String domicilio;
     private String email;
-private String dni;
+    private String dni;
 
     public Cliente(String nombre, String apellidos, String telefono, String domicilio, String email, String dni) {
         this.nombre = nombre;

@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private LinearLayout loginLayout;
     private FirebaseFirestore db;
+    private int compruebaCuenta;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -194,6 +195,8 @@ public class LoginActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        compruebaCuenta = 0;
+
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
@@ -207,6 +210,28 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
+                                        db = FirebaseFirestore.getInstance();
+                                        db.collection("clientes")
+                                                .whereEqualTo("email", account.getEmail())
+                                                .get()
+                                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                        if (task.isSuccessful()) {
+                                                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                                                if (document.getId().equals(account.getEmail())){
+                                                                    showMenu(account.getEmail());
+                                                                }
+                                                                compruebaCuenta++;
+                                                            }
+                                                        }
+                                                        if (compruebaCuenta == 0){
+                                                            Intent registro = new Intent(LoginActivity.this, RegistroActivity.class);
+                                                            registro.putExtra("correo", account.getEmail());
+                                                            startActivity(registro);
+                                                        }
+                                                    }
+                                                });
                                         showMenu(account.getEmail());
                                     } else {
                                         alertaLogin();

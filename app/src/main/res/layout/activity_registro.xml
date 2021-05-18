@@ -14,76 +14,92 @@
         tools:layout_editor_absoluteY="1dp"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/introregistro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:fontFamily="@font/lemon_reg"
-            android:gravity="center"
-            android:text="Introduzca sus datos"
-            android:textSize="40dp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/Nombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="40dp"
-            android:hint="@string/nomvacio"
-            android:selectAllOnFocus="true" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/apellidos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="40dp"
-            android:hint="@string/apevacio"
-            android:imeOptions="actionDone"
-            android:selectAllOnFocus="true" />
-        <EditText
-            android:id="@+id/dni"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="40dp"
-            android:hint="@string/dnivacio"
-            android:imeOptions="actionDone"
-            android:selectAllOnFocus="true" />
-        <EditText
-            android:id="@+id/telefono"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="40dp"
-            android:hint="@string/numvacio"
-            android:imeOptions="actionDone"
-            android:selectAllOnFocus="true"/>
-        <EditText
-            android:id="@+id/domicilio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="40dp"
-            android:hint="@string/domvacio"
-            android:imeOptions="actionDone"
-            android:selectAllOnFocus="true"/>
+                <TextView
+                    android:id="@+id/introregistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="120dp"
+                    android:fontFamily="@font/lemon_reg"
+                    android:gravity="center"
+                    android:text="Introduzca sus datos"
+                    android:textSize="40dp" />
 
-        <Button
-            android:id="@+id/btregistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
-            android:text="Guardar datos"
-            android:textColor="@color/white"
-            android:background="@drawable/formaboton"/>
+                <EditText
+                    android:id="@+id/Nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="40dp"
+                    android:hint="@string/nomvacio"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:id="@+id/apellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="40dp"
+                    android:hint="@string/apevacio"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:id="@+id/dni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="40dp"
+                    android:hint="@string/dnivacio"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:id="@+id/domicilio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="40dp"
+                    android:hint="@string/domvacio"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:id="@+id/telefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="40dp"
+                    android:hint="@string/numvacio"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true" />
+
+                <Button
+                    android:id="@+id/btregistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/formaboton"
+                    android:text="Guardar datos"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
