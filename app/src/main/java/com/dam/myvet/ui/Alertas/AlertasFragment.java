@@ -30,7 +30,6 @@ public class AlertasFragment extends Fragment {
     EditText destinatario,asunto,mensaje;
     Button btMandar;
     String correo,contraseña;
-    private ProgressDialog progressDialog;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,9 +52,9 @@ public class AlertasFragment extends Fragment {
                 Properties properties = new Properties();
                 properties.put("mail.smtp.auth", "true");
                 properties.put("mail.smtp.host", "smtp.gmail.com");
-                properties.put("mail.smtp.port", "465");
-                properties.put("mail.smtp.socketFactory.port", "465");
-                properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+                properties.put("mail.smtp.port", "587");
+                properties.put("mail.smtp.starttls.enable","true");
+                properties.put("mail.smtp.ssl.trust", "*");
 
                 //Inicializar sesión
                 Session session = Session.getInstance(properties, new Authenticator() {
@@ -64,9 +63,6 @@ public class AlertasFragment extends Fragment {
                         return new PasswordAuthentication(correo, contraseña);
                     }
                 });
-
-                progressDialog = ProgressDialog.show(getActivity(), "Por favor, espere",
-                        "Enviando mensaje...", true, false);
 
                 SenderAsyncTask task = new SenderAsyncTask(session, correo,
                         destinatario.getText().toString(), asunto.getText().toString(), mensaje.getText().toString());
@@ -128,7 +124,7 @@ public class AlertasFragment extends Fragment {
         @Override
         protected void onPostExecute(String result) {
             progressDialog.dismiss();
-            Toast.makeText(getActivity().getApplicationContext(), result, Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity().getApplicationContext(), "Envío con éxito", Toast.LENGTH_LONG).show();
         }
     }
 
