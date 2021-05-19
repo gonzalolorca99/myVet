@@ -23,7 +23,7 @@ public class MascotasCFragment extends Fragment {
         MascotasCViewModel =
                 new ViewModelProvider(this).get(MascotasCViewModel.class);
 
-        View root = inflater.inflate(R.layout.fragment_inicioc, container, false);
+        View root = inflater.inflate(R.layout.fragment_mascotasc, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
         MascotasCViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
