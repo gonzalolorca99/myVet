@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@drawable/diseno_lista_cliente"
+    >
+
+    <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@mipmap/iconusuario" />
+
+        <TextView
+            android:id="@+id/filanombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:translationY="14dp"
+            android:text="Nombre Apellido1 Apellido2"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20dp"
+             />
+
+</LinearLayout>

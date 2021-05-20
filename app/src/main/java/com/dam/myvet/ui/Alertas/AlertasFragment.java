@@ -124,6 +124,9 @@ public class AlertasFragment extends Fragment {
         @Override
         protected void onPostExecute(String result) {
             progressDialog.dismiss();
+            destinatario.setText("");
+            asunto.setText("");
+            mensaje.setText("");
             Toast.makeText(getActivity().getApplicationContext(), "Envío con éxito", Toast.LENGTH_LONG).show();
         }
     }

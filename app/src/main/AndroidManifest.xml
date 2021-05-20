@@ -12,6 +12,7 @@
         android:theme="@style/Theme.MyVet">
         <activity android:name=".RegistroActivity"></activity>
         <activity android:name=".ModificaActivity"></activity>
+        <activity android:name=".MuestraClienteActivity"></activity>
         <activity
             android:name=".MenuClienteActivity"
             android:label="@string/title_activity_menu_cliente"
