@@ -8,8 +8,11 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.dam.myvet.ui.InicioC.InicioCFragment;
+import com.dam.myvet.ui.Perfil.PerfilFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,6 +45,7 @@ public class MenuClienteActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     String email;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +75,7 @@ public class MenuClienteActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         nombre = (TextView) headerView.findViewById(R.id.nav_header_nombre_cliente);
         correo = (TextView) headerView.findViewById(R.id.correoCliente);
+
 
         db = FirebaseFirestore.getInstance();
         db.collection("clientes")

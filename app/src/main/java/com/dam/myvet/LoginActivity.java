@@ -125,6 +125,7 @@ public class LoginActivity extends AppCompatActivity {
         loginLayout.setVisibility(View.VISIBLE);
     }
 
+
     public void session(){
         SharedPreferences prefs = getSharedPreferences(
                 getString(R.string.prefs_file), Context.MODE_PRIVATE);
@@ -201,7 +202,8 @@ public class LoginActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-
+                Log.d("account", account.getEmail());
+                System.out.println("La cuenta es :" + account.getEmail());
                 if (account != null){
                     AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
 

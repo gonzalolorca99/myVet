@@ -4,19 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradiente"
     tools:context=".ui.InicioC.InicioCFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/btperfil"
+        android:layout_width="140dp"
+        android:layout_height="183dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+
+        android:layout_marginTop="128dp"
+        android:background="@drawable/formaboton"
+        android:drawableTop="@drawable/ic_baseline_person_24grande"
+        android:paddingTop="20dp"
+        android:text="Perfil"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btabous"
+        android:layout_width="140dp"
+        android:layout_height="183dp"
+
+        android:layout_marginStart="204dp"
+        android:layout_marginLeft="204dp"
+        android:layout_marginTop="336dp"
+        android:background="@drawable/formaboton"
+        android:drawableTop="@drawable/ic_baseline_info_24"
+        android:paddingTop="20dp"
+        android:text="Sobre Nosotros"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btmascotas"
+        android:layout_width="140dp"
+        android:layout_height="183dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+
+        android:layout_marginTop="336dp"
+        android:background="@drawable/formaboton"
+        android:drawableTop="@drawable/ic_baseline_pets_24grande"
+        android:paddingTop="20dp"
+        android:text="Mascotas"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btcitas"
+        android:layout_width="140dp"
+        android:layout_height="183dp"
+
+        android:layout_marginStart="204dp"
+        android:layout_marginLeft="204dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/formaboton"
+        android:drawableTop="@drawable/ic_baseline_event_24grande"
+        android:paddingTop="20dp"
+        android:text="Citas"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

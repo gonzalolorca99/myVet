@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,28 +12,53 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.dam.myvet.R;
 
 public class InicioFragment extends Fragment {
 
-    private InicioViewModel inicioViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        inicioViewModel =
-                new ViewModelProvider(this).get(InicioViewModel.class);
 
-
-        View root = inflater.inflate(R.layout.fragment_inicioc, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-
-        inicioViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+        View root = inflater.inflate(R.layout.fragment_inicio, container, false);
+        Button btalertas = (Button) root.findViewById(R.id.btalertas);
+        Button btturnos = (Button) root.findViewById(R.id.btturnos);
+        Button btmascvet = (Button) root.findViewById(R.id.btmascotasvet);
+        Button btclientes =(Button) root.findViewById(R.id.btclientes);
+        btalertas.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                NavController nav = Navigation.findNavController(root);
+                nav.navigate(R.id.nav_alertas);
             }
         });
+
+        btturnos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navtur = Navigation.findNavController(root);
+                navtur.navigate((R.id.nav_turnos));
+            }
+        });
+
+        btmascvet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navmascvet = Navigation.findNavController(root);
+                navmascvet.navigate(R.id.nav_mascotas);
+            }
+        });
+
+        btclientes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navclientes = Navigation.findNavController(root);
+                navclientes.navigate(R.id.nav_clientes);
+            }
+        });
+
+
         return root;
     }
 
