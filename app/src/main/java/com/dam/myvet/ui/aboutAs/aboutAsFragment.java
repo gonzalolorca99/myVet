@@ -26,7 +26,6 @@ public class aboutAsFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_aboutas, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
         btdatos = (Button) root.findViewById(R.id.btprivdatos);
         btdatos.setOnClickListener(new View.OnClickListener() {
             @Override

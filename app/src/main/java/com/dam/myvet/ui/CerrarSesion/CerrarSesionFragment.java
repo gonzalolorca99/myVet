@@ -31,14 +31,6 @@ public class CerrarSesionFragment extends Fragment {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
-
-        final TextView textView = root.findViewById(R.id.text_home);
-        CerrarSesionViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 

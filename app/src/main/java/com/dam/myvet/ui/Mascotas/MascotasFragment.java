@@ -24,13 +24,6 @@ public class MascotasFragment extends Fragment {
                 new ViewModelProvider(this).get(MascotasViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_mascotas, container, false);
-        final TextView textView = root.findViewById(R.id.text_mascotas);
-        MascotasViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 

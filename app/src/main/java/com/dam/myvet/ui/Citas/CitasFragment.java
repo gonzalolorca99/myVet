@@ -24,13 +24,6 @@ public class CitasFragment extends Fragment {
                 new ViewModelProvider(this).get(CitasViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_inicioc, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        CitasViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 

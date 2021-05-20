@@ -24,13 +24,6 @@ public class TurnosFragment extends Fragment {
                 new ViewModelProvider(this).get(TurnosViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_turnos, container, false);
-        final TextView textView = root.findViewById(R.id.text_turnos);
-        TurnosViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 
