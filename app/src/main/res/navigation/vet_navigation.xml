@@ -16,10 +16,10 @@
         android:label="Alertas"
         tools:layout="@layout/fragment_alertas" />
     <fragment
-        android:id="@+id/nav_turnos"
-        android:name="com.dam.myvet.ui.Turnos.TurnosFragment"
-        android:label="Turnos"
-        tools:layout="@layout/fragment_turnos" />
+        android:id="@+id/nav_citas"
+        android:name="com.dam.myvet.ui.Citas.CitasFragment"
+        android:label="Citas"
+        tools:layout="@layout/fragment_citas" />
     <fragment
         android:id="@+id/nav_mascotas"
         android:name="com.dam.myvet.ui.Mascotas.MascotasFragment"

@@ -13,7 +13,7 @@
             android:icon="@drawable/ic_baseline_person_24"
             android:title="Perfil" />
         <item
-            android:id="@+id/nav_citas"
+            android:id="@+id/nav_citasC"
             android:icon="@drawable/ic_baseline_event_24"
             android:title="Citas" />
         <item

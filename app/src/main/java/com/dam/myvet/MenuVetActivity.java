@@ -58,7 +58,7 @@ public class MenuVetActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.nav_alertas, R.id.nav_turnos,
+                R.id.nav_inicio, R.id.nav_alertas, R.id.nav_citas,
                 R.id.nav_mascotas, R.id.nav_clientes, R.id.nav_cerrarsesion)
                 .setDrawerLayout(drawer)
                 .build();

@@ -62,7 +62,7 @@ public class InicioCFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 NavController navcitas = Navigation.findNavController(root);
-                navcitas.navigate(R.id.nav_citas);
+                navcitas.navigate(R.id.nav_citasC);
             }
         });
 

@@ -24,7 +24,7 @@ public class InicioFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_inicio, container, false);
         Button btalertas = (Button) root.findViewById(R.id.btalertas);
-        Button btturnos = (Button) root.findViewById(R.id.btturnos);
+        Button btcitas = (Button) root.findViewById(R.id.btcitas);
         Button btmascvet = (Button) root.findViewById(R.id.btmascotasvet);
         Button btclientes =(Button) root.findViewById(R.id.btclientes);
         btalertas.setOnClickListener(new View.OnClickListener() {
@@ -34,11 +34,11 @@ public class InicioFragment extends Fragment {
             }
         });
 
-        btturnos.setOnClickListener(new View.OnClickListener() {
+        btcitas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavController navtur = Navigation.findNavController(root);
-                navtur.navigate((R.id.nav_turnos));
+                navtur.navigate((R.id.nav_citas));
             }
         });
 

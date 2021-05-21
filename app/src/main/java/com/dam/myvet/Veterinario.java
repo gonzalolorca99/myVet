@@ -45,3 +45,13 @@ public class Veterinario {
         this.email = email;
     }
 }
+
+/*if (veterinario=vet1)
+for (i=9;i=14;i++)
+    for (j=0; j=60; j+=15)
+        db()
+
+if (veterinario=vet2)
+        for (i=17;i=21;i++)
+        for (j=0; j=60; j+=15)
+        db()*/
