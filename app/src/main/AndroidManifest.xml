@@ -16,6 +16,14 @@
         <activity android:name=".MuestraMascotaActivity"></activity>
         <activity android:name=".ListaCitasActivity"></activity>
         <activity android:name=".MuestraCitaActivity"></activity>
+        <activity android:name=".RegistroMascotaActivity"></activity>
+        <activity android:name=".MuestraMascotaClienteActivity"></activity>
+        <activity android:name=".ListaMascotasActivity"></activity>
+        <activity android:name=".ListaOcupActivity"></activity>
+        <activity android:name=".ListaCitasCActivity"></activity>
+        <activity android:name=".MuestraCitaCActivity"></activity>
+        <activity android:name=".RegistroCitaActivity"></activity>
+
         <activity
             android:name=".MenuClienteActivity"
             android:label="@string/title_activity_menu_cliente"

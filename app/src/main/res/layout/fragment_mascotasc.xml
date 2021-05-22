@@ -4,19 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MascotasC.MascotasCFragment">
+    tools:context=".ui.Citas.CitasFragment">
 
-    <TextView
-        android:id="@+id/text_mascotasc"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textmasc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Selecciona una de las opciones disponibles:" />
+        <Button
+            android:id="@+id/btlistarmasc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/formaboton"
+            android:text="Mostrar mascotas"
+            android:textColor="@color/white" />
+
+
+
+        <Button
+            android:id="@+id/btanadirmasc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/formaboton"
+            android:text="Añadir mascota"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/introregistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="120dp"
+                    android:fontFamily="@font/lemon_reg"
+                    android:gravity="center"
+                    android:text="Introduzca los datos de su mascota"
+                    android:textSize="40dp" />
+
+                <EditText
+                    android:id="@+id/NombreMasc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="40dp"
+                    android:hint="@string/nomvacio"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:id="@+id/razaMasc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="40dp"
+                    android:hint="Raza"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true" />
+
+                <EditText
+                    android:id="@+id/edadMasc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="40dp"
+                    android:hint="Edad"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true" />
+
+
+
+                <Button
+                    android:id="@+id/btregistromasc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/formaboton"
+                    android:text="Guardar datos"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,13 +8,12 @@ public class Mascota {
     private String historial;
     private String citasPendientes;
 
-    public Mascota(String nombre, String raza, String edad, String dueño, String historial, String citasPendientes) {
+    public Mascota(String nombre, String raza, String edad, String dueño, String historial) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
         this.dueño = dueño;
         this.historial = historial;
-        this.citasPendientes = citasPendientes;
     }
 
     public String getNombre() {
@@ -57,11 +56,5 @@ public class Mascota {
         this.historial = historial;
     }
 
-    public String getCitasPendientes() {
-        return citasPendientes;
-    }
 
-    public void setCitasPendientes(String citasPendientes) {
-        this.citasPendientes = citasPendientes;
-    }
 }

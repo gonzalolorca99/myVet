@@ -24,6 +24,7 @@ public class MuestraMascotaActivity extends AppCompatActivity {
         final TextView raza = findViewById(R.id.razaPerfil);
         final TextView edad = findViewById(R.id.edadPerfil);
         final TextView dueño = findViewById(R.id.dueñoPerfil);
+        final TextView historial = findViewById(R.id.historial);
         Bundle bundle = getIntent().getExtras();
         String emailCliente = bundle.getString("email");
         String nombreMascota = bundle.getString("nombre");
@@ -42,6 +43,7 @@ public class MuestraMascotaActivity extends AppCompatActivity {
                                 raza.setText(document.getData().get("raza").toString());
                                 dueño.setText(bundle.getString("nombreDueño"));
                                 edad.setText(document.getData().get("edad").toString());
+                                historial.setText(document.getData().get("historial").toString());
                             }
 
                         }
