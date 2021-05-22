@@ -1,9 +1,13 @@
 package com.dam.myvet;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +23,7 @@ public class MuestraCitaCActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private Button bteliminar;
     private String formatfec;
+    private int mes;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +37,27 @@ public class MuestraCitaCActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String fecha = bundle.getString("fecha");
-        formatfec= fecha.split("")[0].split("/")[0]+"-"+fecha.split("")[0].split("/")[1]+"-"+fecha.split("")[0].split("/")[2] + " "+ fecha.split("")[1];
+        if(Integer.parseInt(fecha.split(" ")[0].split("/")[1])< 10){
+            mes = Integer.parseInt(fecha.split(" ")[0].split("/")[1]);
+            formatfec= fecha.split(" ")[0].split("/")[0]+"-"+mes+"-"+fecha.split(" ")[0].split("/")[2] + " "+ fecha.split(" ")[1];
+
+        }
+        else{
+            formatfec= fecha.split(" ")[0].split("/")[0]+"-"+fecha.split(" ")[0].split("/")[1]+"-"+fecha.split(" ")[0].split("/")[2] + " "+ fecha.split(" ")[1];
+        }
+
         db = FirebaseFirestore.getInstance();
         bteliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 db.collection("citas").document(formatfec).delete();
+                Intent inicio = new Intent(MuestraCitaCActivity.this, MenuClienteActivity.class);
+                SharedPreferences prefs = getSharedPreferences(
+                        getString(R.string.prefs_file), Context.MODE_PRIVATE);
+                String email = prefs.getString("email", null);
+                inicio.putExtra("email", email);
+                Toast.makeText(MuestraCitaCActivity.this, "Cita eliminada con éxito", Toast.LENGTH_SHORT).show();
+                startActivity(inicio);
 
             }
         });
