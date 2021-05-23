@@ -56,7 +56,6 @@ public class RegistroActivity extends AppCompatActivity {
                             apellidosEditText.getText().toString(), telefonoEditText.getText().toString(),
                             domicilioEditText.getText().toString(), email,
                             dniEditText.getText().toString());
-                    Log.d("COMPRUEBAESPACIO","MIMUERTO");
                     db.collection("clientes")
                             .whereEqualTo("dni", dniEditText.getText().toString())
                             .get()
@@ -64,7 +63,6 @@ public class RegistroActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if (task.isSuccessful()) {
-                                        Log.d("DESPUESTASK","MIMUERTO");
                                         for (QueryDocumentSnapshot document : task.getResult()) {
                                             Log.d("CompruebaRegistro", document.getId() + " => " + document.getData());
                                             if (document.getData().get("dni").toString().equals(dniEditText.getText().toString())) {

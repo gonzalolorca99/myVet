@@ -31,7 +31,6 @@ public class MuestraMascotaClienteActivity extends AppCompatActivity {
 
         nombre.setText(nombrem);
         raza.setText(razam);
-        Log.d("Puto hist", "a"+histm+"b");
         if(!histm.equals("")){
             historial.setText(histm);
         }

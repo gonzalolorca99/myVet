@@ -22,11 +22,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class CerrarSesionFragment extends Fragment {
 
-    private CerrarSesionViewModel CerrarSesionViewModel;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        CerrarSesionViewModel =
-                new ViewModelProvider(this).get(CerrarSesionViewModel.class);
         View root = inflater.inflate(R.layout.activity_login, container, false);
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(getActivity(), LoginActivity.class);

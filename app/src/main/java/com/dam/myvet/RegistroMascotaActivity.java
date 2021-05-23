@@ -58,7 +58,6 @@ public class RegistroMascotaActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                     if (task.isSuccessful()) {
-                                        Log.d("DESPUESTASK","MIMUERTO");
                                         for (QueryDocumentSnapshot document : task.getResult()) {
                                             Log.d("CompruebaMasc", document.getId() + " => " + document.getData());
                                             contadorMasc++;

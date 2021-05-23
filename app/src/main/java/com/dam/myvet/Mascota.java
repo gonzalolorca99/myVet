@@ -6,7 +6,6 @@ public class Mascota {
     private String edad;
     private String dueño;
     private String historial;
-    private String citasPendientes;
 
     public Mascota(String nombre, String raza, String edad, String dueño, String historial) {
         this.nombre = nombre;

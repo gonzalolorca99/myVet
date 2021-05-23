@@ -24,9 +24,6 @@ import com.dam.myvet.ui.Perfil.PerfilFragment;
 
 public class InicioCFragment extends Fragment {
 
-    private InicioCViewModel homeViewModel;
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 

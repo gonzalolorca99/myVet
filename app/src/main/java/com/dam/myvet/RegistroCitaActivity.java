@@ -145,7 +145,6 @@ public class RegistroCitaActivity extends AppCompatActivity {
                                                         @Override
                                                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                                             if (task.isSuccessful()) {
-                                                                Log.d("DESPUESTASK","MIMUERTO");
                                                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                                                     Log.d("CompruebaMasc", document.getId() + " => " + document.getData());
                                                                     hist = document.get("historial").toString();

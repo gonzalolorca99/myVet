@@ -52,7 +52,6 @@ public class ModificaActivity extends AppCompatActivity {
                             apellidosEditText.getText().toString(), telefonoEditText.getText().toString(),
                             domicilioEditText.getText().toString(), email,
                             dniEditText.getText().toString());
-                    Log.d("COMPRUEBAESPACIO","MIMUERTO");
                     db.collection("clientes")
                             .whereEqualTo("email", email)
                             .get()

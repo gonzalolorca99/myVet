@@ -19,7 +19,6 @@ import com.dam.myvet.R;
 
 public class aboutAsFragment extends Fragment {
 
-    private aboutAsViewModel aboutAsViewModel;
     private Button btdatos;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

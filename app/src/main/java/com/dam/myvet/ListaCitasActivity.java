@@ -99,7 +99,7 @@ public class ListaCitasActivity extends AppCompatActivity {
                         conversion = "00";
                     }
 
-                    Log.d("TURNOMANANA", fecha+" "+i+":"+conversion);
+                    Log.d("TURNOTARDE", fecha+" "+i+":"+conversion);
                     db.collection("citas")
                             .whereEqualTo("fecha", fecha+" "+i+":"+conversion)
                             .get()
